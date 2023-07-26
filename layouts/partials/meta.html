@@ -1,0 +1,18 @@
+<section class="flex items-center gap-6">
+{{- if not .Date.IsZero }}
+	<time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">
+		{{.Date.Format ( .Site.Params.dateformat | default "January 2, 2006")}}
+	</time>
+{{ end -}}
+{{- with .Params.tags }}
+	<ul>
+	{{ range . }}
+		<li class="inline-block after:content-[','] last:after:content-none">
+			<a href="{{ "/tags/" | relURL }}{{ . | urlize | lower }}" rel="category">
+				{{ . }}
+			</a>
+		</li>
+	{{ end -}}
+	</ul>
+{{ end -}}
+</section>

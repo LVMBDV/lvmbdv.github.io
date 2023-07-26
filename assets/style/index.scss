@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "assets/style/fonts";
+
+html {
+  @apply bg-white text-slate-700;
+  @apply dark:bg-stone-800 dark:text-stone-100;
+}
+
+a {
+  @apply text-blue-700 hover:text-sky-500;
+  @apply dark:text-emerald-500 dark:hover:text-emerald-700;
+}
+
+p {
+  @apply my-5;
+}
+
+code, pre {
+  @apply bg-slate-100;
+  @apply dark:bg-stone-600;
+}
+
+code {
+  @apply px-1;
+}
+
+pre {
+  @apply p-2;
+}

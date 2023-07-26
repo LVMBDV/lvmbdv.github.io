@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+{{ partial "head.html" . }}
+<body class="max-w-screen-lg lg:mx-auto mx-5 my-5">
+	{{ partial "header.html" . }}
+	<main>
+		{{ block "main" . }}{{ end }}
+	</main>
+</body>
+</html>

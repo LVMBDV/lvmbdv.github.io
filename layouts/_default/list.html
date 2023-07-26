@@ -1,0 +1,16 @@
+{{ define "main" }}
+	{{ if not .IsHome }}
+	<header>
+		<h1>{{ .Title }}</h1>
+	</header>
+	{{ end }}
+	<section>
+		{{ .Content }}
+	</section>
+	<section>
+	{{ range .Paginator.Pages }}
+		{{ partial "summary" . }}
+	{{ end }}
+	</section>
+	{{ partial "pagination" .Paginator }}
+{{ end }}

@@ -1,0 +1,28 @@
+baseURL = "http://ata.gitlab.io"
+languageCode = "en-us"
+title = "LVMBDV"
+paginate = 5
+
+[markup.highlight]
+codeFences = false
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+description = "A blog on computers and freedom."
+
+[params.social]
+linkedin = "ata-kuyumcu"
+github = "LVMBDV"
+gitlab = "Ata"
+
+[[menu.navbar]]
+name = "home"
+url = "/"
+weight = 1
+
+[[menu.navbar]]
+name = "about"
+url = "/about"
+weight = 2

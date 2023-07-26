@@ -1,0 +1,14 @@
+{{ if or (.HasPrev) (.HasNext) }}
+<ul>
+	{{ if .HasPrev }}
+	<li>
+		<a href="{{ .Prev.URL }}">Previous Page</a>
+	</li>
+	{{ end }}
+	{{ if .HasNext }}
+	<li>
+		<a href="{{ .Next.URL }}">Next Page</a>
+	</li>
+	{{ end }}
+</ul>
+{{ end }}

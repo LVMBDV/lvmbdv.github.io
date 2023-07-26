@@ -1,0 +1,19 @@
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>{{ block "title" . }}{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}{{ end }}</title>
+	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}"/>
+
+	{{ with .OutputFormats.Get "rss" }}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s"/>` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end }}
+
+	<link rel="icon" href="{{ "favicon.ico" | relURL }}"/>
+		
+	{{ with resources.Get "style/index.scss" | toCSS | postCSS | resources.ExecuteAsTemplate (printf "css/index.dev.%v.css" now.UnixMilli) . }}
+		<link rel="stylesheet" href="{{ .RelPermalink }}">
+	{{ end }}
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>

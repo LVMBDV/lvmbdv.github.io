@@ -1,0 +1,11 @@
+<nav>
+{{ with .Site.Menus.navbar }}
+	<ul>
+	{{ range sort . }}
+		<li class="inline-block">
+			<a href="{{ .URL }}">{{ .Name }}</a>
+		</li>
+	{{ end }}
+	</ul>
+{{ end }}
+</nav>
