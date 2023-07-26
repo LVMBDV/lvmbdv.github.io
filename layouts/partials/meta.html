@@ -7,7 +7,7 @@
 {{- with .Params.tags }}
 	<ul>
 	{{ range . }}
-		<li class="inline-block after:content-[','] last:after:content-none">
+		<li class="inline-block mx-2">
 			<a href="{{ "/tags/" | relURL }}{{ . | urlize | lower }}" rel="category">
 				{{ . }}
 			</a>

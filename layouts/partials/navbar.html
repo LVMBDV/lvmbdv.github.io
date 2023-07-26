@@ -2,7 +2,7 @@
 {{ with .Site.Menus.navbar }}
 	<ul>
 	{{ range sort . }}
-		<li class="inline-block">
+		<li class="inline-block mx-2">
 			<a href="{{ .URL }}">{{ .Name }}</a>
 		</li>
 	{{ end }}
